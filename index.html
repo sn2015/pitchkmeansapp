@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cars K-mean clustering pitch</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Cars K-mean clustering pitch">
+  <meta name="author" content="Sergey Nazarov">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Cars K-mean clustering pitch</h1>
+    <h2></h2>
+    <p>Sergey Nazarov<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <div id="bg">
+  <img src="assets/img/Cars-2-movie-photo.jpg" alt="">
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>What is this application for</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><h3>Application allows you to explore mtcars dataset, whether there are clusters of cars.</h3></li>
+<li><h3>It uses k-means method of classification.</h3></li>
+<li><h3>You should choose two variables and input a number of clusters (your intuition guess).</h3></li>
+<li><h3>Application produces a two dimentional plot and shows centers of possible clusters.</h3></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Motor Trend Car Road Tests</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Description<br>
+The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973 - 74 models).<br>
+Variables are:</p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li>mpg    Miles/(US) gallon</li>
+<li>cyl    Number of cylinders</li>
+<li>disp   Displacement (cu.in.)</li>
+<li>hp     Gross horsepower</li>
+<li>drat   Rear axle ratio</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ul>
+<li>wt     Weight (1000 lbs)</li>
+<li>qsec   1/4 mile time</li>
+<li>vs     V/S</li>
+<li>am     Transmission (0 = automatic, 1 = manual)</li>
+<li>gear   Number of forward gears</li>
+<li>carb   Number of carburetors<br></li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <p>After you choose number of clusters and two variables it produces a plot:</p>
+
+<pre><code class="r">kmeansObj &lt;- kmeans(data.frame(mtcars$mpg, mtcars$hp), centers = 3)
+plot(data, col = kmeansObj$cluster, pch = 19)
+points(kmeansObj$centers, col = 1:3, pch = 4, cex = 3, lwd = 3)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
+
+<h3>You can find this app here and explore it by yourself:</h3>
+
+<p><a href="https://sn2015.shinyapps.io/carsclastersapp">https://sn2015.shinyapps.io/carsclastersapp</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='NA'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='What is this application for'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Motor Trend Car Road Tests'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='NA'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
